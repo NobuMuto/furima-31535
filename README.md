@@ -45,28 +45,24 @@
 
 ### Association
 
-- belongs_to :users
+- belongs_to :user
 - belongs_to :item
 - has_one    :post
 
 
 ## posts テーブル
 
-| Column      | Type       | Options     |
-| ----------  | ---------- | ----------- |
-| postal_code | integer    | null: false |
-| prefecture  | string     | null: false |
-| city        | string     | null: false |
-| number      | integer    | null: false |
-| building    | string     | null: false |
-| tel_number  | integer    | null: false |
-| user        | references | ----------- |
-| item        | references | ----------- |
-| purchase    | references | ----------- |
+| Column        | Type       | Options           |
+| ------------- | ---------- | ----------------- |
+| postal_code   | integer    | null: false       |
+| prefecture_id | integer    | null: false       |
+| city          | string     | null: false       |
+| number        | string     | null: false       |
+| building      | string     | ----------------- |
+| tel_number    | string     | null: false       |
+| purchase      | references | foreign_key :true |
 
 
 ### Association
 
-- belongs_to :purchases
-- belongs_to :user
-- belongs_to :item
+- belongs_to :purchase
