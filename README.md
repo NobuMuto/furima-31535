@@ -15,45 +15,38 @@
 ### Association
 
 - has_many :purchases
-- has_many :items, through: purchases
 - has_many :items
-- has_one  :post
 
 ## items テーブル
 
-| Column        | Type       | Options     |
-| ------------- | ---------- | ----------- |
-| name          | string     | null: false |
-| detail        | text       | null: false |
-| categoly      | string     | null: false |
-| status        | string     | null: false |
-| delivery_fee  | integer    | null: false |
-| deliver_area  | string     | null: false |
-| delivery_date | integer    | null: false |
-| price         | integer    | null: false |
-| user          | references | ----------- |
-
-### Association
-
-- belongs_to :users
-- has_many   :purchases
-- has_many   :users, through: purchases
-- has_one    :post
-
-## purchases テーブル
-
-| Column          | Type       | Options     |
-| --------------- | ---------- | ----------- |
-| card_number     | integer    | null: false |
-| expiration_date | integer    | null: false |
-| security_code   | string     | null: false |
-| user            | references | ----------- |
-| item            | references | ----------- |
+| Column        | Type       | Options           |
+| ------------- | ---------- | ----------------- |
+| name          | string     | null: false       |
+| detail        | text       | null: false       |
+| category      | string     | null: false       |
+| status        | string     | null: false       |
+| delivery_fee  | integer    | null: false       |
+| deliver_area  | string     | null: false       |
+| delivery_date | date       | null: false       |
+| price         | integer    | null: false       |
+| user          | references | foreign_key :true |
 
 ### Association
 
 - belongs_to :user
-- belongs_to :prototype
+- has_one    :purchase
+
+## purchases テーブル
+
+| Column          | Type       | Options           |
+| --------------- | ---------- | ----------------- |
+| user            | references | foreign_key :true |
+| item            | references | foreign_key :true |
+
+### Association
+
+- belongs_to :users
+- belongs_to :item
 - has_one    :post
 
 
