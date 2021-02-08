@@ -2,16 +2,16 @@
 
 ## users テーブル
 
-| Column             | Type   | Options     |
-| ------------------ | ------ | ----------- |
-| email              | string | null: false |
-| encrypted_password | string | null: false |
-| nickname           | string | null: false |
-| first_name         | string | null: false |
-| last_name          | string | null: false |
-| first_name_kana    | string | null: false |
-| last_name_kana     | string | null: false |
-| birthday           | date   | null: false |
+| Column             | Type   | Options                  |
+| ------------------ | ------ | ------------------------ |
+| email              | string | null: false, unique:true |
+| encrypted_password | string | null: false              |
+| nickname           | string | null: false              |
+| first_name         | string | null: false              |
+| last_name          | string | null: false              |
+| first_name_kana    | string | null: false              |
+| last_name_kana     | string | null: false              |
+| birthday           | date   | null: false              |
 ### Association
 
 - has_many :purchases
@@ -54,8 +54,7 @@
 
 | Column        | Type       | Options           |
 | ------------- | ---------- | ----------------- |
-| postal_code   | integer    | null: false       |
-| prefecture_id | integer    | null: false       |
+| postal_code   | string     | null: false       |
 | city          | string     | null: false       |
 | number        | string     | null: false       |
 | building      | string     | ----------------- |
