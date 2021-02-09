@@ -52,14 +52,15 @@
 
 ## posts テーブル
 
-| Column        | Type       | Options           |
-| ------------- | ---------- | ----------------- |
-| postal_code   | string     | null: false       |
-| city          | string     | null: false       |
-| number        | string     | null: false       |
-| building      | string     | ----------------- |
-| tel_number    | string     | null: false       |
-| purchase      | references | foreign_key :true |
+| Column          | Type       | Options           |
+| --------------- | ---------- | ----------------- |
+| postal_code     | string     | null: false       |
+| deliver_area_id | integer    | null: false       |
+| city            | string     | null: false       |
+| number          | string     | null: false       |
+| building        | string     | ----------------- |
+| tel_number      | string     | null: false       |
+| purchase        | references | foreign_key :true |
 
 
 ### Association
