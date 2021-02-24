@@ -6,6 +6,10 @@ class User < ApplicationRecord
 
   validates :nickname, :birthday, presence: true
 
+  with_options length: { minimum: 7 }, format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i, message: '半角英数字を使用してください' } do
+    validates :password
+  end
+
   with_options presence: true, format: { with: /\A[ぁ-んァ-ヶ一-龥々]+\z/, message: '全角文字を使用してください' } do
     validates :first_name
     validates :last_name
