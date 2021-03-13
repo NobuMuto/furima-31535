@@ -19,5 +19,6 @@ class Delivery_area < ActiveHash::Base
 ]
 
   include ActiveHash::Associations
+  has_many :items
 
   end
