@@ -23,6 +23,7 @@
 | ---------------- | ---------- | ----------------- |
 | name             | string     | null: false       |
 | detail           | text       | null: false       |
+| image            | text       | null: false       |
 | category_id      | integer    | null: false       |
 | status_id        | integer    | null: false       |
 | delivery_fee_id  | integer    | null: false       |
