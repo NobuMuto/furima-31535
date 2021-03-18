@@ -1,14 +1,13 @@
 FactoryBot.define do
   factory :item do
-    name                  {Faker::Name.initials}
-    detail                
-    image                 
-    category_id              
-    status                
-    delivery_fee_id          
-    delivery_area         {'北海道'}
-    delivery_date         
-    price                 
+    name                  {'空'}
+    detail                {'美しい'}
+    category_id           {'1'}
+    status                {'1'}
+    delivery_fee_id       {'1'}
+    delivery_area         {'1'}
+    delivery_date         {'1'}
+    price                 {'10000'}
 
     association :user
 
