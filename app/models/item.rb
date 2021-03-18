@@ -2,16 +2,16 @@ class Item < ApplicationRecord
 
   has_one_attached :image
 
-  with_options presence:true do
-    validate :name
-    validate :detail
-    validate :image
-    validate :category
-    validate :status
-    validate :delivery_fee
-    validate :delivery_area
-    validate :delivery_date
-    validate :price
+  with_options presence: true do
+    validates :name
+    validates :detail
+    validates :image
+    validates :category
+    validates :status
+    validates :delivery_fee
+    validates :delivery_area
+    validates :delivery_date
+    validates :price
   end
 
   belongs_to :category
