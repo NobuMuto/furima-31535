@@ -20,6 +20,7 @@ class Item < ApplicationRecord
   belongs_to :delivery_fee
   belongs_to :delivery_area
   belongs_to :delivery_date
+  belongs_to :user
 
   validates :price, format: { with: /\A[0-9]+\z/, message: '半角数字を使用してください' }
   validates :price,
