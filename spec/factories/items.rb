@@ -2,11 +2,11 @@ FactoryBot.define do
   factory :item do
     name                  { '空' }
     detail                { '美しい' }
-    category_id           { 1 }
-    status_id             { 1 }
-    delivery_fee_id       { 1 }
-    delivery_area_id      { 1 }
-    delivery_date_id      { 1 }
+    category_id           { 2 }
+    status_id             { 2 }
+    delivery_fee_id       { 2 }
+    delivery_area_id      { 2 }
+    delivery_date_id      { 2 }
     price                 { 10000 }
     association :user
 
