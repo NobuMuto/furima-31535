@@ -7,11 +7,11 @@ class Item < ApplicationRecord
     validates :name
     validates :detail
     validates :image
-    validates :category_id
-    validates :status_id
-    validates :delivery_fee_id
-    validates :delivery_area_id
-    validates :delivery_date_id
+    #validates :category_id
+    #validates :status_id
+    #validates :delivery_fee_id
+    #validates :delivery_area_id
+    #validates :delivery_date_id
     validates :price
   end
 
