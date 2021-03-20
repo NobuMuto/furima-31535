@@ -1,6 +1,6 @@
-<mxfile host="65bd71144e" modified="2021-02-10T11:22:34.064Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.52.1 Chrome/83.0.4103.122 Electron/9.3.5 Safari/537.36" etag="8j4toAJxhFF1QsnHW3DW" version="14.2.4" type="embed">
+<mxfile host="65bd71144e" modified="2021-03-13T08:40:58.597Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.53.2 Chrome/87.0.4280.141 Electron/11.2.1 Safari/537.36" etag="E197qDBnmCQUgiwbbFdP" version="14.2.4" type="embed">
     <diagram id="W_JHLbIr_wXQvV-Vtyxq" name="Page-1">
-        <mxGraphModel dx="1448" dy="500" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="808" dy="321" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -13,7 +13,7 @@
                 <mxCell id="4" value="Items" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" parent="1" vertex="1">
                     <mxGeometry x="510" y="280" width="220" height="170" as="geometry"/>
                 </mxCell>
-                <mxCell id="5" value="| name          | string     | null: false       |&#10;| detail        | text       | null: false       |&#10;| category      | string     | null: false       |&#10;| status        | string     | null: false       |&#10;| delivery_fee  | integer    | null: false       |&#10;| deliver_area  | string     | null: false       |&#10;| delivery_date | date       | null: false       |&#10;| price         | integer    | null: false       |&#10;| user          | references | foreign_key :true |" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="4" vertex="1">
+                <mxCell id="5" value="| name          | string     | null: false       |&#10;| detail        | text       | null: false       |&#10;| image            | text       | null: false       |&#10;| category      | string     | null: false       |&#10;| status        | string     | null: false       |&#10;| delivery_fee  | integer    | null: false       |&#10;| deliver_area  | string     | null: false       |&#10;| delivery_date | date       | null: false       |&#10;| price         | integer    | null: false       |&#10;| user          | references | foreign_key :true |" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="4" vertex="1">
                     <mxGeometry y="30" width="220" height="140" as="geometry"/>
                 </mxCell>
                 <mxCell id="20" value="Purchases" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" parent="1" vertex="1">
