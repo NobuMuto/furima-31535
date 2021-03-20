@@ -15,6 +15,14 @@ class Item < ApplicationRecord
     validates :price
   end
 
+  with_options numericality: { other_than: 1 } do
+    validates :category_id
+    validates :status_id
+    validates :delivery_fee_id
+    validates :delivery_area_id
+    validates :delivery_date_id
+  end
+
   belongs_to :category
   belongs_to :status
   belongs_to :delivery_fee
