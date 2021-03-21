@@ -21,7 +21,7 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Itme.find(params[:id])
+    @item = Item.find(params[:id])
   end
 
   #def move_to_index
