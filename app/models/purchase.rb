@@ -45,5 +45,9 @@ end
 
   def save
     # 各テーブルにデータを保存する処理を書く
+    user = User.create(nickname: nickname, first_name: first_name, last_name: last_name, first_name_kana: first_name_kana, last_name_kana: last_name_kana, birthday: birthday)
+
+    Item.create(name: name, detail: detail, image: image, category_id: category_id, status_id: status_id, delivery_fee_id: delivery_fee_id, delivery_area_id: delivery_area_id,
+      delivery_date_id: delivery_date_id, price: price, user_id: user.id)
   end
 end
