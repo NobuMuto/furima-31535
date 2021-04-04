@@ -11,9 +11,9 @@ class PurchasesController < ApplicationController
      if @purchase_post.valid?
       pay_item
        @purchase_post.save
-       redirect_to action: :index
+       redirect_to root_path
      else
-       render action: :new
+       render action: :index
      end
   end
   
