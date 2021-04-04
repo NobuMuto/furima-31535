@@ -1,14 +1,9 @@
 class PurchasePost
   include ActiveModel::Model
-  attr_accessor :user_id, :item_id, :postal_code, :delivery_area_id, :city, :number, :building, :tel_number, :purchase_id, :token
+  attr_accessor :user_id, :item_id, :postal_code, :delivery_area_id, :city, :number, :building, :tel_number, :token
 
   # ここにバリデーションの処理を書く
   #purchase 
-  with_options numericality: { other_than: 1 } do
-    validates :user_id
-    validates :item_id
-  end
-
   #post
   
   with_options validates :postal_code, format: { with: /\A\d{3}[-]\d{4}\z/, message: '半角数字を使用してください' } do
@@ -17,7 +12,6 @@ class PurchasePost
 
   with_options numericality: { other_than: 1 } do
     validates :delivery_area_id
-    validates :purchase_id
   end
 
 
@@ -34,8 +28,7 @@ class PurchasePost
 
   def save
     # 各テーブルにデータを保存する処理を書く
-    Purchase.create(user_id: user.id, item_id: item_id)
-
-    Post.create(postal_code: postal_code, delivery_area_id: delivery_area_id, city: city, number: number, building: building, tel_number: tel_number, purchase_id: purchase_id)
+    purchase = Purchase.create(user_id: user_id, item_id: item_id)
+    Post.create(postal_code: postal_code, delivery_area_id: delivery_area_id, city: city, number: number, building: building, tel_number: tel_number, purchase_id: purchase.id)
   end
 end
