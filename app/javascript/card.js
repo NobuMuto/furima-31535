@@ -8,7 +8,7 @@ const pay = () => {
     const formData = new FormData(formResult);
 
     const card = {
-      number: formData.get("purchase_post[number]"),
+      number: formData.get("purchase_post[card_number]"),
       cvc: formData.get("purchase_post[cvc]"),
       exp_month: formData.get("purchase_post[exp_month]"),
       exp_year: `20${formData.get("purchase_post[exp_year]")}`,
@@ -23,7 +23,7 @@ const pay = () => {
         renderDom.insertAdjacentHTML("beforeend", tokenObj);
       }
 
-      document.getElementById("purchase_post_number").removeAttribute("name");
+      document.getElementById("purchase_post_card_number").removeAttribute("name");
       document.getElementById("purchase_post_cvc").removeAttribute("name");
       document.getElementById("purchase_post_exp_month").removeAttribute("name");
       document.getElementById("purchase_post_exp_year").removeAttribute("name");
