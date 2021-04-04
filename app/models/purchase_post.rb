@@ -30,11 +30,12 @@ class PurchasePost
   end
 
   validates :tel_number, presence: true, format: { with:  /\A\d{10}$|^\d{11}\z/, message: '半角数字を使用してください' }
-  end
 
+
+  def save
     # 各テーブルにデータを保存する処理を書く
     Purchase.create(user_id: user.id, item_id: item_id)
 
-    Post.create(postal_code: postal_code, delivery_area_id: delivery_area_id, :city, number: number, building: building, tel_number: tel_number, purchase_id: purchase_id)
+    Post.create(postal_code: postal_code, delivery_area_id: delivery_area_id, city: city, number: number, building: building, tel_number: tel_number, purchase_id: purchase_id)
   end
 end

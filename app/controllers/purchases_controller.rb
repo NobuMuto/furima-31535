@@ -2,11 +2,13 @@ class PurchasesController < ApplicationController
 
   def index 
     @item = Item.find(params[:item_id])
+    @purchase_post = PurchasePost.new
   end
 
   def create
+    @item = Item.find(params[:item_id])
     @purchase_post = PurchasePost.new(purchase_post_params)   #「UserDonation」に編集
-     if @upurchase_post.valid?
+     if @purchase_post.valid?
       pay_item
        @purchase_post.save
        redirect_to action: :index
@@ -24,7 +26,7 @@ class PurchasesController < ApplicationController
   def pay_item
     Payjp.api_key = ENV["PAYJP_SECRET_KEY"]    
     Payjp::Charge.create(
-      amount: purchase_post_params[:price],  
+      amount: @item.price,  
       card: purchase_post_params[:token],    
       currency: 'jpy'                 
     )
