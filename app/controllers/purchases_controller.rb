@@ -1,14 +1,12 @@
 class PurchasesController < ApplicationController
-  before_action :authenticate_user!, only: :index
-  before_action :move_to_index, only: :index
+  before_action :authenticate_user!
+  before_action :move_to_index
 
   def index
-    @item = Item.find(params[:item_id])
     @purchase_post = PurchasePost.new
   end
 
   def create
-    @item = Item.find(params[:item_id])
     @purchase_post = PurchasePost.new(purchase_post_params)   # 「UserDonation」に編集
     if @purchase_post.valid?
       pay_item
@@ -37,6 +35,7 @@ class PurchasesController < ApplicationController
   end
 
   def move_to_index
-    redirect_to root_path unless current_user.id == @item.user_id
+    @item = Item.find(params[:item_id])
+    redirect_to root_path unless current_user.id != @item.user_id
   end
 end
