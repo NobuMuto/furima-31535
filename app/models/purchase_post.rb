@@ -21,6 +21,8 @@ class PurchasePost
   with_options presence: true do
     validates :number
     validates :token
+    validates :user_id
+    validates :item_id
   end
 
   validates :tel_number, presence: true, format: { with: /\A\d{10}$|^\d{11}\z/, message: '半角数字を使用してください' }
