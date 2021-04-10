@@ -85,6 +85,12 @@ RSpec.describe PurchasePost, type: :model do
         @purchase_post.valid?
         expect(@purchase_post.errors.full_messages).to include('Tel number 半角数字を使用してください')
       end
+
+      it '電話番号は英数混合では登録できない事' do
+        @purchase_post.tel_number = '090123456aa'
+        @purchase_post.valid?
+        expect(@purchase_post.errors.full_messages).to include('Tel number 半角数字を使用してください')
+      end
     end
   end
 end
