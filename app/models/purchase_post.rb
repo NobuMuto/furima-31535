@@ -2,10 +2,6 @@ class PurchasePost
   include ActiveModel::Model
   attr_accessor :user_id, :item_id, :postal_code, :delivery_area_id, :city, :number, :building, :tel_number, :token
 
-  # ここにバリデーションの処理を書く
-  # purchase
-  # post
-
   with_options validates :postal_code, format: { with: /\A\d{3}-\d{4}\z/, message: '半角数字を使用してください' } do
     validates :postal_code
   end

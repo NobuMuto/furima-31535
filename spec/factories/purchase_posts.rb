@@ -1,7 +1,5 @@
 FactoryBot.define do
   factory :purchase_post do
-    user_id                { 2 }
-    item_id                { 2 }
     postal_code        { '298-3847' }
     delivery_area_id   { 2 }
     city               { 'あか市' }
